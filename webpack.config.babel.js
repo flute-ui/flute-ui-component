@@ -8,19 +8,19 @@ import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 const inDevMode = process.env.NODE_ENV === 'development'
 const inProdMode = !inDevMode
-const componentName = 'Element'
+const componentName = 'Block'
 
 const commonConfig = {
   progress: true,
   debug: true,
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
-    path.join(__dirname, 'src', 'Element.js')
+    path.join(__dirname, 'src', 'Block.js')
   ],
   output: {
     path: path.join(__dirname, '/lib'),
     filename: componentName + '.js',
-    library: 'react-element',
+    library: 'react-block',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -73,11 +73,7 @@ const commonConfig = {
       autoprefixer
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin(['static'], {
-      root: process.cwd()
-    })
-  ]
+  plugins: []
 }
 
 const devConfig = merge(commonConfig, {
