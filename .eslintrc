@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {}
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "max-statements": [2, 30],
+    "complexity": [1, 6],
+    "padded-blocks": [0, "never"]
+  }
+}

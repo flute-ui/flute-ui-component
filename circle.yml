@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 6.5.0
+
+test:
+  pre:
+    - npm run lint
+  post:
+    - npm run coverage:generate
+    - npm run coverage:check
+    - npm run coverage:report:codeclimate
+    - npm run coverage:report:coveralls
+    - DEBUG=condition npm run semantic-release || true
