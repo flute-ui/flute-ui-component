@@ -49,7 +49,7 @@ This component can then be used as follows:
 Which will render as follows: 
 
 ```html
-<button class="Component Btn Btn--primary Component--fillsParent">
+<button class="Component Component--fillsParent Btn Btn--primary">
   <span class="Btn-contents">Hello</span>
 </button>
 ```
