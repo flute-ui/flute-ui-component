@@ -1,5 +1,5 @@
 # react-component
-A `<Component />` component that encapsulates some common behaviour that is often needed by UI components that are styled using BEM
+A component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)
 
 ## Installation
 ```
@@ -29,12 +29,12 @@ export default class Btn extends React.Component {
 Then you can define styles for this component as follows (Using the BEM naming convention as defined by [Suit CSS](https://suitcss.github.io/)):
 
 ```css
-.FancyButton {
+.Btn {
   background-color: black;
   color: white;
 }
 
-.FancyButton--primary {
+.Btn--primary {
   background-color: green;
 }
 
@@ -55,7 +55,7 @@ Which will render as follows:
 ```
 
 ## Notes
-* Can only be used with components that extend the React.Component class
+* Can only be used with components that extend the React.Component class (for now)
 
 
 
