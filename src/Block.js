@@ -1,7 +1,7 @@
 import React from 'react'
 import toClassNames from 'classnames'
 
-//import './Block.scss' // TODO: Uncomment
+// import './Block.scss' // TODO: Uncomment
 
 export default class Block extends React.Component {
 
