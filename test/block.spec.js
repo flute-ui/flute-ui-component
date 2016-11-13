@@ -39,15 +39,23 @@ describe('<Block />', function () {
 
   describe('<Block classes={{foo: true, bar:false}} />', function () {
     it('should render the properties that evaluate to true as class names', function () {
-      const block = shallow(<Block classes={{foo: true, bar: false}} />)
+      const block = shallow(<Block classes={{foo: true, bar: false}}/>)
       expect(block.find('.foo')).to.have.length(1)
       expect(block.find('.bar')).to.have.length(0)
     })
   })
 
+  describe('<Block classes={["foo", {bar:true, baz:false}]} />', function () {
+    it('should render the strings and the object properties that evaluate to true as class names', function () {
+      const block = shallow(<Block classes={['foo', {bar: true, baz: false}]}/>)
+      expect(block.find('.foo.bar')).to.have.length(1)
+      expect(block.find('.baz')).to.have.length(0)
+    })
+  })
+
   describe('<Block classes="foo bar" />', function () {
     it('should render the space delimited values of the `classes` attribute as class names', function () {
-      const block = shallow(<Block classes="foo bar" />)
+      const block = shallow(<Block classes="foo bar"/>)
       expect(block.find('.foo.bar')).to.have.length(1)
     })
   })
@@ -71,15 +79,25 @@ describe('<Block />', function () {
       }
 
       const block = shallow(<Block as={CustomComponent}/>)
-
       expect(block.type()).to.equal(CustomComponent)
     })
   })
 
   describe('<Block className="Foo" props={{kind:"special smart someModifier"}}/>', function () {
     it('should render the space delimited values of the `kind` attribute as modifiers of the block', function () {
-      const block = shallow(<Block className="Foo" props={{kind: 'special smart'}} />)
+      const block = shallow(<Block className="Foo" props={{kind: 'special smart'}}/>)
       expect(block.find('.Foo--special.Foo--smart')).to.have.length(1)
+    })
+  })
+
+  describe('<Block className="Foo" props={{kind:"special :someModifier"}} />', function () {
+    it('should render modifier names found in the `kind` attribute that has been prefixxed with ' +
+      '`:` as modifiers of `Block` itself', function () {
+
+      const block = shallow(<Block className="Foo" props={{kind: 'special :someModifier'}}/>)
+      expect(block.find('.Foo--special.Block--someModifier')).to.have.length(1)
+      expect(block.prop('className')).to.not.contain('Foo--:someModifier')
+
     })
   })
 })

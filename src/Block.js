@@ -1,7 +1,8 @@
 import React from 'react'
 import toClassNames from 'classnames'
 
-// import './Block.scss' // TODO: Uncomment
+const WORD_WITH_COLON_PREFIX = /(:[^\s]+)/
+const WORD_WITHOUT_COLON_PREFIX = /^(?!:).+/
 
 export default class Block extends React.Component {
 
@@ -41,13 +42,17 @@ export default class Block extends React.Component {
       }
     }
 
-    const modifiers = modsFor(blockName, [
-      p.kind,
-      {
-        prefix: ':',
-        blockName: 'Block'
-      }
-    ])
+    const modifiers = getModsFor({
+      blockName,
+      modifiers: p.kind,
+      match: WORD_WITHOUT_COLON_PREFIX
+    })
+
+    const rootBlockModifiers = getModsFor({
+      blockName: 'Block',
+      modifiers: p.kind,
+      match: WORD_WITH_COLON_PREFIX
+    })
 
     let classes = blockName
 
@@ -57,6 +62,10 @@ export default class Block extends React.Component {
 
     if (additionalClasses) {
       classes += ` ${additionalClasses}`
+    }
+
+    if (rootBlockModifiers) {
+      classes += ` ${rootBlockModifiers}`
     }
 
     classes = `Block ${classes}`
@@ -93,22 +102,17 @@ function removeExtraSpacesFromCssClassNames (classes) {
   return classes.replace('  ', ' ').trim()
 }
 
-function modsFor (blockName, modMappings) {
+function getModsFor ({blockName, modifiers, match}) {
+
   const mods = []
 
-  for (let mapping of modMappings) {
-    if (mapping) {
-      if (typeof mapping === 'string') {
-        mapping.trim().split(' ').forEach(item => {
-          mods.push(`${blockName}--${item}`)
-        })
+  if (modifiers) {
+    for (let modifier of modifiers.split(' ')) {
+      if (match.test(modifier)) {
+        mods.push(`${blockName}--${modifier.replace(':', '')}`)
       }
-//      else if (mapping.value) {
-//        mods.push(`${blockName}--${mapping.prefix}${mapping.value}`)
-//      }
     }
   }
 
   return mods.join(' ')
 }
-
