@@ -8,18 +8,18 @@ npm install @flute-io/react-component -S
 
 ## Usage
 
-So you would define your component like this
+Start by defining your component like this
 
 ```js
 import React from 'react'
 import Component from '@flute-io/react-component'
 
-export default class FancyButton extends React.Component {
+export default class Btn extends React.Component {
 
   render () {
     return (
-      <Component className="FancyButton" as="Button" {...this}>
-        <span className="FancyButton-contents">{this.props.children}</span>
+      <Component className="Btn" as="Button" {...this}>
+        <span className="Btn-contents">{this.props.children}</span>
       </Component>
     )
   }
@@ -40,18 +40,18 @@ Then you can define styles for this component as follows (Using the BEM naming c
 
 ```
 
-Then this component can be used as follows:
+This component can then be used as follows:
 
 ```html
-<FancyButton kind="primary c:fillsParent">Hello</FancyButton>
+<Btn kind="primary :fillsParent">Hello</Btn>
 ```
 
-Which will render as follows 
+Which will render as follows: 
 
 ```html
-<Button class="Component Component--fillsParent FancyButton FancyButton--primar
-  <span class="FancyButton-contents">Hello</span>
-</Button>
+<button class="Component Btn Btn--primary Component--fillsParent">
+  <span class="Btn-contents">Hello</span>
+</button>
 ```
 
 ## Notes
