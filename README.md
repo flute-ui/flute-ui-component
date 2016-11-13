@@ -25,7 +25,7 @@ export default class Btn extends Component {
 
   render () {
     return (
-      <Block className="Btn" as="Button" {...this}>
+      <Block className="Btn" as="button" {...this}>
         <span className="Btn-contents">{this.props.children}</span>
       </Block>
     )
@@ -50,13 +50,13 @@ Then you can define styles for this component as follows (Using the BEM naming c
 This component can then be used as follows:
 
 ```html
-<Btn kind="primary :fillsParent">Hello</Btn>
+<Btn kind="primary :fillsParent" classes={{foo: true, bar: false}}>Hello</Btn>
 ```
 
 Which will render as follows: 
 
 ```html
-<button class="Block Block--fillsParent Btn Btn--primary">
+<button class="Block Block--fillsParent Btn Btn--primary foo">
   <span class="Btn-contents">Hello</span>
 </button>
 ```
