@@ -1,5 +1,5 @@
-import './Block.scss'
+import './UiComponent.scss'
 
-import Block from './Block'
+import UiComponent from './UiComponent'
 
-export default Block
+export default UiComponent

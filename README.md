@@ -1,16 +1,16 @@
-# react-block
+# react-ui-component
 
-[![CircleCI branch](https://img.shields.io/circleci/project/github/flute-io/react-block/master.svg)](https://circleci.com/gh/flute-io/react-block)
-[![Coverall Test Coverage](https://img.shields.io/coveralls/flute-io/react-block/master.svg)](https://coveralls.io/github/flute-io/react-block)
-[![Code Climate](https://codeclimate.com/github/flute-io/react-block/badges/gpa.svg)](https://codeclimate.com/github/flute-io/react-block)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/flute-io/react-ui-component/master.svg)](https://circleci.com/gh/flute-io/react-ui-component)
+[![Coverall Test Coverage](https://img.shields.io/coveralls/flute-io/react-ui-component/master.svg)](https://coveralls.io/github/flute-io/react-ui-component)
+[![Code Climate](https://codeclimate.com/github/flute-io/react-ui-component/badges/gpa.svg)](https://codeclimate.com/github/flute-io/react-ui-component)
 [![Dependency Status](https://www.versioneye.com/user/projects/581a0a0289f0a91d55eb925f/badge.svg)](https://www.versioneye.com/user/projects/581a0a0289f0a91d55eb925f)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-An <Block /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)
+An <UiComponent /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)
 
 ## Installation
 ```
-npm install @flute-io/react-block -S
+npm install @flute-io/react-ui-component -S
 ```
 
 ## Usage
@@ -19,15 +19,15 @@ Start by defining your component like this
 
 ```js
 import React, {Component} from 'react'
-import Block from '@flute-io/react-block'
+import UiComponent from '@flute-io/react-ui-component'
 
 export default class Btn extends Component {
 
   render () {
     return (
-      <Block className="Btn" as="button" {...this}>
+      <UiComponent className="Btn" as="button" {...this}>
         <span className="Btn-contents">{this.props.children}</span>
-      </Block>
+      </UiComponent>e
     )
   }
 }
@@ -56,7 +56,7 @@ This component can then be used as follows:
 Which will render as follows: 
 
 ```html
-<button class="Block Block--fillsParent Btn Btn--primary foo">
+<button class="UiComponent UiComponent--fillsParent Btn Btn--primary foo">
   <span class="Btn-contents">Hello</span>
 </button>
 ```

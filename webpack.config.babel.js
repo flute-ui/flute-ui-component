@@ -8,7 +8,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 const inDevMode = process.env.NODE_ENV === 'development'
 const inProdMode = !inDevMode
-const componentName = 'Block'
+const componentName = 'UiComponent'
 
 const commonConfig = {
   progress: true,
@@ -20,7 +20,7 @@ const commonConfig = {
   output: {
     path: path.join(__dirname, '/lib'),
     filename: componentName + '.js',
-    library: 'react-block',
+    library: 'react-ui-component',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

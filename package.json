@@ -1,7 +1,7 @@
 {
-  "name": "@flute-io/react-block",
+  "name": "@flute-io/react-ui-component",
   "version": "0.0.0-semantically-released",
-  "description": "A <Block /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)",
+  "description": "A <UiComponent /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)",
   "scripts": {
     "build": "webpack",
     "build:dev": "NODE_ENV=development npm run build -- --watch",
@@ -21,20 +21,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/flute-io/react-block"
+    "url": "https://github.com/flute-io/react-ui-component"
   },
   "keywords": [
     "react",
-    "block",
-    "react-block",
+    "component",
+    "react-ui-component",
     "BEM"
   ],
   "author": "Ifeanyi Isitor <ify.iyo@gmail.com> (http://ify.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flute-io/react-block/issues"
+    "url": "https://github.com/flute-io/react-ui-component/issues"
   },
-  "homepage": "https://github.com/flute-io/react-block",
+  "homepage": "https://github.com/flute-io/react-ui-component",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.5.3",

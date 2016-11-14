@@ -4,7 +4,7 @@ import toClassNames from 'classnames'
 const WORD_WITH_COLON_PREFIX = /(:[^\s]+)/
 const WORD_WITHOUT_COLON_PREFIX = /^(?!:).+/
 
-export default class Block extends React.Component {
+export default class UiComponent extends React.Component {
 
   static get propTypes () {
     return {
@@ -49,7 +49,7 @@ export default class Block extends React.Component {
     })
 
     const rootBlockModifiers = getModsFor({
-      blockName: 'Block',
+      blockName: 'UiComponent',
       modifiers: p.kind,
       match: WORD_WITH_COLON_PREFIX
     })
@@ -68,7 +68,7 @@ export default class Block extends React.Component {
       classes += ` ${rootBlockModifiers}`
     }
 
-    classes = `Block ${classes}`
+    classes = `UiComponent ${classes}`
 
     classes = removeDuplicatesFromCssClassNames(classes)
 
