@@ -68,6 +68,13 @@ describe('<Block />', function () {
     })
   })
 
+  describe('<Block as="div" props={{as:`span`}} />', function () {
+    it('should render as the tag name specified in `props.props.as`', function () {
+      const block = shallow(<Block as="div" props={{as: 'span'}} />)
+      expect(block.type()).to.equal('span')
+    })
+  })
+
   describe('<Block as={SomeComponent} />', function () {
     it('should render as the custom component that has been specified as the value of ' +
       'the `as` attribute', function () {
