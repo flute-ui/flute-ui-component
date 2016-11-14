@@ -27,7 +27,7 @@ export default class Btn extends Component {
     return (
       <UiComponent className="Btn" as="button" {...this}>
         <span className="Btn-contents">{this.props.children}</span>
-      </UiComponent>e
+      </UiComponent>
     )
   }
 }
