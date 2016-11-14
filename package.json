@@ -9,7 +9,7 @@
     "commit": "npm run lint && npm run test && git cz",
     "coverage": "nyc npm t",
     "coverage:generate": "nyc --reporter lcov npm t",
-    "coverage:check": "nyc check-coverage --statements 100 --branches 90 --functions 100 --lines 100",
+    "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "coverage:report:codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
     "coverage:report:coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage:view": "npm run coverage:generate && open coverage/lcov-report/index.html",

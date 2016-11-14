@@ -19,75 +19,73 @@ export default class UiComponent extends React.Component {
   }
 
   render () {
-    const p = this.props.props || {}
+    const localProps = this.props
+    const remoteProps = this.props.props || {}
 
-    const classNames = typeof this.props.className === 'string'
-      ? this.props.className.split(' ')
-      : []
-    const blockName = classNames[0] || ''
-
-    let additionalClasses = p.className === undefined ? '' : p.className
-
-    if (classNames.length > 1) {
-      additionalClasses += ' ' + classNames.splice(1, classNames.length).join(' ')
-    }
-
-    if (this.props.classes) {
-      additionalClasses += ' '
-
-      if (typeof this.props.classes === 'object') {
-        additionalClasses += toClassNames(this.props.classes)
-      } else {
-        additionalClasses += this.props.classes
-      }
-    }
+    let {blockName, additionalClasses} = classNameDetailsOf({
+      localClassName: localProps.className,
+      remoteClassName: remoteProps.className,
+      conditionalClassNames: [
+        localProps.classes,
+        remoteProps.classes
+      ]
+    })
 
     const modifiers = getModsFor({
       blockName,
-      modifiers: p.kind,
+      modifiers: remoteProps.kind,
       match: WORD_WITHOUT_COLON_PREFIX
     })
 
     const rootBlockModifiers = getModsFor({
       blockName: 'UiComponent',
-      modifiers: p.kind,
+      modifiers: remoteProps.kind,
       match: WORD_WITH_COLON_PREFIX
     })
 
-    let classes = blockName
+    const className = cleanClassNames(
+      `UiComponent ${blockName} ${modifiers} ${additionalClasses} ${rootBlockModifiers}`
+    )
 
-    if (modifiers) {
-      classes += ` ${modifiers}`
-    }
-
-    if (additionalClasses) {
-      classes += ` ${additionalClasses}`
-    }
-
-    if (rootBlockModifiers) {
-      classes += ` ${rootBlockModifiers}`
-    }
-
-    classes = `UiComponent ${classes}`
-
-    classes = removeDuplicatesFromCssClassNames(classes)
-
-    classes = removeExtraSpacesFromCssClassNames(classes)
-
-    const tag = p.as || this.props.as
+    const tag = remoteProps.as || this.props.as
 
     const props = {}
 
-    Object.keys(this.props).forEach((key) => {
+    Object.keys(localProps).forEach((key) => {
       if (key.startsWith('data-')) {
         props[key] = this.props[key]
       }
     })
 
-    props.className = classes
+    props.className = className
 
     return React.createElement(tag, props, this.props.children)
   }
+}
+
+function classNameDetailsOf ({localClassName, remoteClassName, conditionalClassNames}) {
+  const localNames = typeof localClassName === 'string'
+    ? localClassName.split(' ')
+    : []
+
+  const additionalLocalClassNames = localNames.length > 1
+    ? localNames.splice(1, localNames.length).join(' ')
+    : ''
+
+  const additionalRemoteClassNames = remoteClassName === undefined
+    ? ''
+    : remoteClassName
+
+  return {
+    blockName: localNames[0] || '',
+    additionalClasses: `${additionalRemoteClassNames} ${additionalLocalClassNames} ${toClassNames(conditionalClassNames)}`
+  }
+}
+
+function cleanClassNames (classNames) {
+  return removeExtraSpacesFromCssClassNames(
+    removeDuplicatesFromCssClassNames(classNames)
+  )
 }
 
 function removeDuplicatesFromCssClassNames (value) {

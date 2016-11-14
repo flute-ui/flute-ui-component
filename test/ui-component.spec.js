@@ -31,8 +31,17 @@ describe('<UiComponent />', function () {
   })
 
   describe('<UiComponent className="foo bar" />', function () {
-    it('should append additional class names to the end rather than overwrite the `UiComponent` class name', function () {
+    it('should append additional class names to the end rather than overwrite ' +
+      'the `UiComponent` class name', function () {
       const component = shallow(<UiComponent className="foo bar"/>)
+      expect(component.prop('className')).to.equal('UiComponent foo bar')
+    })
+  })
+
+  describe('<UiComponent props={{className: `foo bar`}} />', function () {
+    it('should append additional class names found in `props.props.className` to the end rather ' +
+      'than overwrite the `UiComponent` class name', function () {
+      const component = shallow(<UiComponent props={{className: 'foo bar'}}/>)
       expect(component.prop('className')).to.equal('UiComponent foo bar')
     })
   })
@@ -56,6 +65,29 @@ describe('<UiComponent />', function () {
   describe('<UiComponent classes="foo bar" />', function () {
     it('should render the space delimited values of the `classes` attribute as class names', function () {
       const component = shallow(<UiComponent classes="foo bar"/>)
+      expect(component.find('.foo.bar')).to.have.length(1)
+    })
+  })
+
+  describe('<UiComponent props={{classes:{foo: true, bar:false}}} />', function () {
+    it('should render the properties of `props.props.classes` that evaluate to true as class names', function () {
+      const component = shallow(<UiComponent props={{classes: {foo: true, bar: false}}}/>)
+      expect(component.find('.foo')).to.have.length(1)
+      expect(component.find('.bar')).to.have.length(0)
+    })
+  })
+
+  describe('<UiComponent props={{classes:[`foo`, {bar:true, baz:false}]}} />', function () {
+    it('should render the strings and the object properties in `props.props.classes` that evaluate to true as class names', function () {
+      const component = shallow(<UiComponent props={{classes: ['foo', {bar: true, baz: false}]}} />)
+      expect(component.find('.foo.bar')).to.have.length(1)
+      expect(component.find('.baz')).to.have.length(0)
+    })
+  })
+
+  describe('<UiComponent props={{classes:`foo bar`}} />', function () {
+    it('should render the space delimited values of the `props.props.classes` attribute as class names', function () {
+      const component = shallow(<UiComponent props={{classes: 'foo bar'}} />)
       expect(component.find('.foo.bar')).to.have.length(1)
     })
   })
