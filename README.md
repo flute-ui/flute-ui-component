@@ -10,7 +10,7 @@ An `<UiComponent />` component that encapsulates some common behaviour that is o
 
 ## Installation
 ```
-npm install react-ui-component -S
+npm install @ifyio/react-ui-component -S
 ```
 
 ## Usage

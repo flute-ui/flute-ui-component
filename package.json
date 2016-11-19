@@ -1,5 +1,5 @@
 {
-  "name": "react-ui-component",
+  "name": "@ifyio/react-ui-component",
   "version": "0.1.0",
   "description": "A <UiComponent /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)",
   "scripts": {
