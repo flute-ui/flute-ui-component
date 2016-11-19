@@ -10,10 +10,10 @@ open:
 	npm run app:view
 
 build:
-	npm run build
+	npm run rollup
 
 build-d:
-	npm run build:dev
+	npm run rollup:watch
 
 lint:
 	npm run lint

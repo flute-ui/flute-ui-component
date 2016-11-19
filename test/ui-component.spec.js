@@ -1,9 +1,9 @@
 /* global describe, it */
 
 import React from 'react'
-import UiComponent from '../src/UiComponent' // TODO: Change to lib
 import {expect} from 'chai'
 import {shallow} from 'enzyme'
+import UiComponent from '../src/UiComponent'
 
 describe('<UiComponent />', function () {
 
