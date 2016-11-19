@@ -60,9 +60,3 @@ Which will render as follows:
   <span class="Btn-contents">Hello</span>
 </button>
 ```
-
-## Notes
-* Can only be used with components that extend the React.Component class (for now)
-
-
-

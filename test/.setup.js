@@ -1,4 +1,16 @@
-require('babel-register')();
+require('babel-register')({
+  "plugins": [
+    "add-module-exports",
+    "transform-class-properties"
+  ],
+  "presets": [
+//    [
+//      "es2015"
+//    ],
+    "react",
+    "airbnb"
+  ]
+});
 
 var jsdom = require('jsdom').jsdom;
 
