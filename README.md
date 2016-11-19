@@ -6,7 +6,7 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/5830c1aeee1db3003d7b965b/badge.svg)](https://www.versioneye.com/user/projects/5830c1aeee1db3003d7b965b)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-An <UiComponent /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)
+An `<UiComponent />` component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)
 
 ## Installation
 ```
