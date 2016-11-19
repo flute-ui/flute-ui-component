@@ -67,7 +67,7 @@
     "jsdom": "^9.8.3",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
-    "nyc": "^8.3.2",
+    "nyc": "^9.0.1",
     "open-cli": "^1.0.5",
     "postcss-px2rem": "^0.3.0",
     "react": "^15.3.2",
@@ -78,10 +78,8 @@
     "rollup-plugin-postcss": "^0.2.0",
     "rollup-plugin-sass": "^0.4.8",
     "rollup-plugin-uglify": "^1.0.1",
-    "semantic-release": "^4.3.5",
-    "string-argv": "0.0.2",
-    "webpack": "^1.13.3",
-    "webpack-merge": "^0.15.0"
+    "semantic-release": "^6.3.2",
+    "string-argv": "0.0.2"
   },
   "config": {
     "ghooks": {
