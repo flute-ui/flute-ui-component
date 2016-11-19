@@ -1,5 +1,3 @@
-//import json from 'rollup-plugin-json';
-//import sass from 'rollup-plugin-sass';
 import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 import px2rem from 'postcss-px2rem'
