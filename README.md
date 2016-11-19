@@ -1,8 +1,8 @@
 # react-ui-component
 
-[![CircleCI branch](https://img.shields.io/circleci/project/github/flute-io/react-ui-component/master.svg)](https://circleci.com/gh/flute-io/react-ui-component)
-[![Coverall Test Coverage](https://img.shields.io/coveralls/flute-io/react-ui-component/master.svg)](https://coveralls.io/github/flute-io/react-ui-component)
-[![Code Climate](https://codeclimate.com/github/flute-io/react-ui-component/badges/gpa.svg)](https://codeclimate.com/github/flute-io/react-ui-component)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/ifyio/react-ui-component/master.svg)](https://circleci.com/gh/ifyio/react-ui-component)
+[![Coverall Test Coverage](https://img.shields.io/coveralls/ifyio/react-ui-component/master.svg)](https://coveralls.io/github/ifyio/react-ui-component)
+[![Code Climate](https://codeclimate.com/github/ifyio/react-ui-component/badges/gpa.svg)](https://codeclimate.com/github/ifyio/react-ui-component)
 [![Dependency Status](https://www.versioneye.com/user/projects/581a0a0289f0a91d55eb925f/badge.svg)](https://www.versioneye.com/user/projects/581a0a0289f0a91d55eb925f)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
@@ -10,7 +10,7 @@ An <UiComponent /> component that encapsulates some common behaviour that is oft
 
 ## Installation
 ```
-npm install @flute-io/react-ui-component -S
+npm install react-ui-component -S
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Start by defining your component like this
 
 ```js
 import React, {Component} from 'react'
-import UiComponent from '@flute-io/react-ui-component'
+import UiComponent from 'react-ui-component'
 
 export default class Btn extends Component {
 
