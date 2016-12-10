@@ -11,14 +11,14 @@ export default {
   entry: 'src/index.js',
   format: 'cjs',
   sourceMap: true,
-  dest: `lib/UiComponent.${fileExt}`,
+  dest: `lib/Component.${fileExt}`,
   plugins: [
     postcss({
       plugins: [
         px2rem({remUnit: 16}),
         autoprefixer()
       ],
-      extensions: ['.scss'],
+      extensions: ['.css'],
     }),
     babel({
       exclude: 'node_modules/**',

@@ -1,5 +1,5 @@
-import './UiComponent.scss'
+import './Component.css'
 
-import UiComponent from './UiComponent'
+import Component from './Component'
 
-export default UiComponent
+export default Component

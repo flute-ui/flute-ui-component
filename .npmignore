@@ -1,0 +1,8 @@
+test
+.codeclimate.yml
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+circle.yml
+rollup.config

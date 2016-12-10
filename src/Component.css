@@ -1,8 +1,8 @@
-.UiComponent {
+.fui-Component {
   position: relative;
 }
 
-.UiComponent--fillParent {
+.fui-Component--fillParent {
   position: absolute;
   top: 0;
   right: 0;

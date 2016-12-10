@@ -1,7 +1,7 @@
 {
-  "name": "@ifyio/react-ui-component",
+  "name": "@flute-ui/component",
   "version": "0.1.0",
-  "description": "A <UiComponent /> component that encapsulates some common behaviour that is often needed by UI components that are styled using [BEM](http://getbem.com/)",
+  "description": "A component that encapsulates the common behaviour amongst components that follow the flute-ui components methodology",
   "scripts": {
     "rollup": "rollup -c",
     "rollup:watch": "nodemon -x 'rollup -c'",
@@ -22,20 +22,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ifyio/react-ui-component"
+    "url": "https://github.com/ifyio/flute-ui-component"
   },
   "keywords": [
     "react",
     "component",
-    "react-ui-component",
+    "flute-ui-component",
     "BEM"
   ],
   "author": "Ifeanyi Isitor <ify.iyo@gmail.com> (http://ify.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ifyio/react-ui-component/issues"
+    "url": "https://github.com/ifyio/flute-ui-component/issues"
   },
-  "homepage": "https://github.com/ifyio/react-ui-component",
+  "homepage": "https://github.com/ifyio/flute-ui-component",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.5.3",

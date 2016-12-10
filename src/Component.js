@@ -4,7 +4,7 @@ import toClassNames from 'classnames'
 const WORD_WITH_COLON_PREFIX = /(:[^\s]+)/
 const WORD_WITHOUT_COLON_PREFIX = /^(?!:).+/
 
-export default class UiComponent extends React.Component {
+export default class Component extends React.Component {
 
   static get propTypes () {
     return {
@@ -38,13 +38,13 @@ export default class UiComponent extends React.Component {
     })
 
     const rootBlockModifiers = getModsFor({
-      blockName: 'UiComponent',
+      blockName: 'fui-Component',
       modifiers: remoteProps.kind,
       match: WORD_WITH_COLON_PREFIX
     })
 
     const className = cleanClassNames(
-      `UiComponent ${blockName} ${modifiers} ${additionalClasses} ${rootBlockModifiers}`
+      `Component ${blockName} ${modifiers} ${additionalClasses} ${rootBlockModifiers}`
     )
 
     const tag = remoteProps.as || this.props.as
