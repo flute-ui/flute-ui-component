@@ -53,7 +53,7 @@ export default class Component extends React.Component {
     const props = {}
 
     Object.keys(localProps).forEach((key) => {
-      if (key.startsWith('data-')) {
+      if (key.startsWith('data-') || !['as', 'className'].includes(key)) {
         props[key] = this.props[key]
       }
     })

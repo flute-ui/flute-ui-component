@@ -1,17 +1,15 @@
 import babel from 'rollup-plugin-babel'
-import uglify from 'rollup-plugin-uglify'
 import px2rem from 'postcss-px2rem'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'
 
 const isProd = process.env.NODE_ENV === 'production'
-const fileExt = isProd ? 'min.js' : 'js'
 
 export default {
   entry: 'src/index.js',
   format: 'cjs',
   sourceMap: true,
-  dest: `lib/Component.${fileExt}`,
+  dest: `lib/index.js`,
   plugins: [
     postcss({
       plugins: [
@@ -36,7 +34,6 @@ export default {
         ],
         'react'
       ]
-    }),
-    (isProd && uglify())
+    })
   ]
 }

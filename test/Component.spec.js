@@ -132,11 +132,24 @@ describe('<Component />', function () {
   describe('<Component className="Foo" props={{kind:"special :someModifier"}} />', function () {
     it('should render modifier names found in the `kind` attribute that has been prefixed with ' +
       '`:` as modifiers of `Component` itself', function () {
-
       const component = shallow(<Component className="Foo" props={{kind: 'special :someModifier'}}/>)
       expect(component.find('.Foo--special.fui-Component--someModifier')).to.have.length(1)
       expect(component.prop('className')).to.not.contain('Foo--:someModifier')
+    })
+  })
 
+  describe('extra attributes', function () {
+    it('should pass the extra attributes unto the element that will be rendered', function () {
+      const component = shallow(<Component as="svg" width="32" height="32" />)
+      const expected = {
+        width: '32',
+        height: '32'
+      }
+      const actual = {
+        width: component.prop('width'),
+        height: component.prop('height')
+      }
+      expect(expected).to.eql(actual)
     })
   })
 })

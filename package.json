@@ -2,11 +2,10 @@
   "name": "@flute-ui/component",
   "version": "0.2.0",
   "description": "A component that encapsulates the common behaviour amongst components that follow the flute-ui components methodology",
-  "main": "lib/Component.js",
+  "main": "lib/index.js",
   "scripts": {
-    "rollup": "rollup -c",
-    "rollup:watch": "nodemon -x 'rollup -c'",
-    "rollup:all": "npm run rollup && NODE_ENV=production npm run rollup",
+    "build": "rollup -c",
+    "build:watch": "nodemon -x 'rollup -c'",
     "clean": "git clean -fxd -e .idea -e .env",
     "commit": "npm run lint && npm run test && git cz",
     "coverage": "nyc npm t",
@@ -78,13 +77,12 @@
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-postcss": "^0.2.0",
-    "rollup-plugin-uglify": "^1.0.1",
     "semantic-release": "^6.3.2",
     "string-argv": "0.0.2"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint && npm run coverage:generate && npm run coverage:check && npm run rollup:all"
+      "pre-commit": "npm run lint && npm run coverage:generate && npm run coverage:check && npm run build"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
