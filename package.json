@@ -22,20 +22,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ifyio/flute-ui-component"
+    "url": "https://github.com/flute-io/flute-ui-component"
   },
   "keywords": [
     "react",
     "component",
+    "flute-ui",
     "flute-ui-component",
     "BEM"
   ],
   "author": "Ifeanyi Isitor <ify.iyo@gmail.com> (http://ify.io)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ifyio/flute-ui-component/issues"
+    "url": "https://github.com/flute-io/flute-ui-component/issues"
   },
-  "homepage": "https://github.com/ifyio/flute-ui-component",
+  "homepage": "https://github.com/flute-io/flute-ui-component",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.5.3",
