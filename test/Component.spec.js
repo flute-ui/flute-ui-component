@@ -15,7 +15,7 @@ describe('<Component />', function () {
 
     it('should have the class name `Component` specified by default', function () {
       const component = shallow(<Component />)
-      expect(component.prop('className')).to.equal('Component')
+      expect(component.prop('className')).to.equal('fui-Component')
     })
 
     it('should render its children', function () {
@@ -34,7 +34,7 @@ describe('<Component />', function () {
     it('should append additional class names to the end rather than overwrite ' +
       'the `Component` class name', function () {
       const component = shallow(<Component className="foo bar"/>)
-      expect(component.prop('className')).to.equal('Component foo bar')
+      expect(component.prop('className')).to.equal('fui-Component foo bar')
     })
   })
 
@@ -42,7 +42,7 @@ describe('<Component />', function () {
     it('should append additional class names found in `props.props.className` to the end rather ' +
       'than overwrite the `Component` class name', function () {
       const component = shallow(<Component props={{className: 'foo bar'}}/>)
-      expect(component.prop('className')).to.equal('Component foo bar')
+      expect(component.prop('className')).to.equal('fui-Component foo bar')
     })
   })
 

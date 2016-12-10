@@ -1,8 +1,10 @@
 import React from 'react'
 import toClassNames from 'classnames'
 
+const BLOCK_NAME = 'fui-Component'
 const WORD_WITH_COLON_PREFIX = /(:[^\s]+)/
 const WORD_WITHOUT_COLON_PREFIX = /^(?!:).+/
+
 
 export default class Component extends React.Component {
 
@@ -38,13 +40,13 @@ export default class Component extends React.Component {
     })
 
     const rootBlockModifiers = getModsFor({
-      blockName: 'fui-Component',
+      blockName: BLOCK_NAME,
       modifiers: remoteProps.kind,
       match: WORD_WITH_COLON_PREFIX
     })
 
     const className = cleanClassNames(
-      `Component ${blockName} ${modifiers} ${additionalClasses} ${rootBlockModifiers}`
+      `${BLOCK_NAME} ${blockName} ${modifiers} ${additionalClasses} ${rootBlockModifiers}`
     )
 
     const tag = remoteProps.as || this.props.as
