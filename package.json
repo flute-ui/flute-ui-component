@@ -1,6 +1,6 @@
 {
   "name": "@flute-ui/component",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A component that encapsulates the common behaviour amongst components that follow the flute-ui components methodology",
   "main": "lib/Component.js",
   "scripts": {
