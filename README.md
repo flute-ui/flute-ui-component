@@ -1,8 +1,8 @@
 # flute-ui-component
 
-[![CircleCI branch](https://img.shields.io/circleci/project/github/ifyio/flute-ui-component/master.svg)](https://circleci.com/gh/ifyio/flute-ui-component)
-[![Coverall Test Coverage](https://img.shields.io/coveralls/ifyio/flute-ui-component/master.svg)](https://coveralls.io/github/ifyio/flute-ui-component)
-[![Code Climate](https://codeclimate.com/github/ifyio/flute-ui-component/badges/gpa.svg)](https://codeclimate.com/github/ifyio/flute-ui-component)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/flute-ui/flute-ui-component/master.svg)](https://circleci.com/gh/flute-ui/flute-ui-component)
+[![Coverall Test Coverage](https://img.shields.io/coveralls/flute-ui/flute-ui-component/master.svg)](https://coveralls.io/github/flute-ui/flute-ui-component)
+[![Code Climate](https://codeclimate.com/github/flute-ui/flute-ui-component/badges/gpa.svg)](https://codeclimate.com/github/flute-ui/flute-ui-component)
 [![Dependency Status](https://www.versioneye.com/user/projects/5830c1aeee1db3003d7b965b/badge.svg)](https://www.versioneye.com/user/projects/5830c1aeee1db3003d7b965b)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
