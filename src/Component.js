@@ -7,16 +7,12 @@ const WORD_WITHOUT_COLON_PREFIX = /^(?!:).+/
 
 export default class Component extends React.Component {
 
-  static get propTypes () {
-    return {
-      as: React.PropTypes.any
-    }
+  static propTypes = {
+    as: React.PropTypes.any
   }
 
-  static get defaultProps () {
-    return {
-      as: 'div'
-    }
+  static defaultProps = {
+    as: 'div'
   }
 
   render () {
@@ -52,8 +48,18 @@ export default class Component extends React.Component {
 
     const props = {}
 
+    const attributesNotToPassThrough = [
+      'as',
+      'className',
+      '_reactInternalInstance',
+      'updater',
+      'refs',
+      'context',
+      'props'
+    ]
+
     Object.keys(localProps).forEach((key) => {
-      if (key.startsWith('data-') || !['as', 'className'].includes(key)) {
+      if (key.startsWith('data-') || ![attributesNotToPassThrough].includes(key)) {
         props[key] = this.props[key]
       }
     })
