@@ -51,15 +51,11 @@ export default class Component extends React.Component {
     const attributesNotToPassThrough = [
       'as',
       'className',
-      '_reactInternalInstance',
-      'updater',
-      'refs',
-      'context',
       'props'
     ]
 
     Object.keys(localProps).forEach((key) => {
-      if (key.startsWith('data-') || ![attributesNotToPassThrough].includes(key)) {
+      if (key.startsWith('data-') || !attributesNotToPassThrough.includes(key)) {
         props[key] = this.props[key]
       }
     })
